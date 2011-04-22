@@ -1,0 +1,20 @@
+Version 0.05
+
+//A lot of things are still not done.
+//Please note that a lot of the tests will fail without the correct database running in the background.
+//An SQL-dump will be included in a later version. 
+
+Welcome to HookCMS. A very lightweight, totally unoriginal CMS containing classes for handling most common "blogish" tasks.
+For example posts, comments, a session for the user, basic security and so on.
+ 
+All material in this CMS is free to use, distribute and modify as you wish. You don't even have to mention us or our work in the documentation for your application, though we would appreciate it.
+ 
+The nickname Hook stands for Hikari Object-Oriented Kai. Hikari-Kai is the youth-community in Gothenburg for which the CMS was originally written, while we think Object-Oriented pretty much speaks for itself. We decided early to write all php-code in OOP-manners, and we've been very serious with the unit-testing throughout the whole project.
+ 
+For this we used SimpleTest, which can be found at: http://www.simpletest.org/
+For our revision control we used GIT (obviously), developed by Linus Torvalds and a whole bunch of people: http://git.or.cz/
+ 
+Most graciously; 
+	Rickard Lund
+	Andreas Fransson
+	Henrik Hugo
