@@ -11,7 +11,7 @@ $(document).ready(function(){
 	
 	// vars to be used
 	var i = 1;
-	var duration = 1000;
+	var duration = 1500;
 	
 	animateDivs(i, duration);
 	

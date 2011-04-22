@@ -1,0 +1,35 @@
+.container {
+	border: 3px solid black;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.noscript-submit {
+	color: #fff;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+	text-decoration: none;
+}
+
+#noscript-login-container {
+	width: 300px;
+	height: 200px;
+}
+
+#noscript-login-content {
+	height: 200px;
+}
+
+#noscript-bottom {
+	width: 300px;
+	background-color: black;
+	margin-top: 93px;
+}
+
+#submit-login {
+	border: 0;
+	padding: 5px;
+	background-color: #080;
+}
