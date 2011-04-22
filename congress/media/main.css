@@ -1,0 +1,207 @@
+/* Elements */
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Helvetica Neue', helvetica, arial, tahoma;
+}
+
+a {
+	color: #66f;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #444;
+}
+
+a:hover {
+	color: #d00;
+}
+
+fieldset {
+	border: 0;
+}
+
+/* Ids */
+
+#header {
+	width: 100%;
+	height: 100px;
+	background-color: #DDD;
+}
+
+#wrapper {
+	margin: 20px;
+	min-height: 480px;
+}
+
+#footer {
+	width: 100%;
+	height: 70px;
+	background-color: #DDD;
+}
+
+#modal {
+	width: 400px;
+	height: 140px;
+	background-color: #DDD;
+	border: 3px solid #000;
+}
+
+#modal a:hover {
+	color: white;
+}
+
+#modal-ticket {
+	width: 400px;
+	height: 140px;
+	background-color: #DDD;
+	border: 3px solid #000;
+}
+
+#yes-delete {
+	background-color: #009900;
+}
+
+#no-delete {
+	background-color: #CC0000;
+}
+
+#yes-delete-ticket {
+	background-color: #009900;
+}
+
+#no-delete-ticket {
+	background-color: #CC0000;
+}
+
+#terms-and-conditions {
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+	min-height: 200px;
+	border: 1px solid #999;
+	padding: 20px;
+}
+
+#terms-agreement {
+	margin-left: 20px;
+	width: 600px;
+	height: 50px;
+}
+
+#approval-area {
+	float: right;
+	width: 50%;
+}
+
+#signature-area {
+	float: left;
+	width: 50%;
+}
+
+#signature {
+	width: 200px;
+	height: 22px;
+	border-bottom: 1px solid black;
+	font-family: cursive;
+	text-align: center;
+}
+
+#cities-statistic {
+	float: left;
+	margin: 20px;
+	border: 1px solid black;
+	width: 250px;
+	padding: 10px;
+}
+
+#groups-statistic {
+	float: left;
+	margin: 20px;
+	border: 1px solid black;
+	width: 250px;
+	padding: 10px;
+}
+
+/* Classes */
+
+.submit-button {
+	margin-left: 15px;
+}
+
+.ticket {
+	margin-top: 10px;
+	width: 50%;
+	height: 200px;
+	border: 1px solid #999;
+}
+
+.modal-text {
+	float: left;
+	margin: 25px;
+	width: 350px;
+	height: 30px;
+	padding: 5px;
+	font-size: 20px;
+}
+
+.modal-link {
+	width: 60px;
+	height: 20px;
+	color: white;
+	float: right;
+	text-align: center;
+	margin-right: 20px;
+	padding: 5px;
+	text-decoration: none;
+}
+
+.modal-link:visited {
+	color: white;
+}
+
+
+.modal-link:hover {
+	text-decoration: underline;
+}
+
+.mailto {
+	z-index: 1;
+}
+
+.hidden {
+	display: none;
+}
+
+.hidden-data {
+	
+}
+
+.navigation {
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.language {
+	float: right;
+	margin-right: 10px;
+}
+
+
+.even {
+	background-color: #DADADA;
+}
+
+.odd {
+	background-color: #FFF;
+}
+
+.even:hover {
+	background-color: #bdf;
+}
+
+.odd:hover {
+	background-color: #def;
+}

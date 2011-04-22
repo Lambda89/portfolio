@@ -1,0 +1,6 @@
+* Dispatcher-files
+*
+* Dispatchers are the files that connect the view-files with the classes.
+* This can be through both AJAX, and through standard HTTP-requests, depending on the action taken.
+* Read in given file for further documentation.
+*
