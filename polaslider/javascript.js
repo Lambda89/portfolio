@@ -13,6 +13,8 @@ $(document).ready(function(){
 	var i = 1;
 	var duration = 1500;
 
+	// Get type from string, select function to call
+
 	var type = $('#type').text();
 	
 	if (type == "Fade") {

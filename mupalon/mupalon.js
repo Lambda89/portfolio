@@ -21,6 +21,10 @@ $(document).ready(function(){
 		var files = [];
 		var listed_songs = $('.listed_song');
 
+		var current_song = $('#player').attr('src');
+		current_song = current_song.replace(/^[a-z]+\//, '');
+		files.push(current_song);
+
 		// Loop through, get all filenames
 		$.each(listed_songs, function(i, elem){
 			files.push($(elem).text());
@@ -31,7 +35,13 @@ $(document).ready(function(){
 
 		$('#music_list').empty();
 		for (var i=0; i < files.length; i++) {
-			$('#music_list').append('<li class="listed_song">' + files[i] + '</li>');
+			if (i == 0) {
+				$('#player').attr('src', 'files/' + files[i]);
+				$('#current_song').html(files[i]);
+			}
+			else {
+				$('#music_list').append('<li class="listed_song">' + files[i] + '</li>');
+			}
 		};
 	});
 });
