@@ -27,7 +27,7 @@ $(document).ready(function(){
 		if (i > (cnt-1)) {
 			i = 1;
 			$('.card').animate({'opacity': 1}, duration);
-			setTimeout(function() { animateDivs(i, duration); }, 3000);	
+			setTimeout(function() { fadeDivs(i, duration); }, 3000);	
 		} 
 		else {
 			$('#c'+i).animate({'opacity': 0}, duration);
