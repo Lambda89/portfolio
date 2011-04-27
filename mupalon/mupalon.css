@@ -12,9 +12,13 @@ ul {
 
 li {
 	padding: 5px;
-	background-color: #FCD;
+	background-color: #F44;
 	border: 1px solid black;
 	margin-bottom: 5px;
+}
+
+li:hover {
+	color: #000;
 }
 
 #wrapper {
@@ -25,8 +29,18 @@ li {
 
 #player {
 	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+.current_div {
+	margin-top: 0;
+	background-color: black;
+	padding: 5px;
 }
 
 #current_song {
 	width: 100%;
+	color: #99FF33;
 }

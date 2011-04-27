@@ -13,13 +13,14 @@ class GetSongs
 		$result = mysql_query($query);
 		$i = 0;
 		while ($row = mysql_fetch_assoc($result)) {
+			$filename = $row['filename'];
 			if (!$i) {
-				$player = '<audio id="player" src="files/' . $row['filename'] .'" controls="controls" autoplay="autoplay"></audio>';
-				$player .= '<div class="current_div"><marquee id="current_song">' . $row['filename'] . '</marquee></div>';
+				$player = '<audio id="player" src="files/' . $filename .'" controls="controls" autoplay="autoplay"></audio>';
+				$player .= '<div class="current_div"><marquee id="current_song">' . $filename . '</marquee></div>';
 				$i++;
 			}
 			else {
-				$ret .= '<li class="listed_song">' . $row['filename'] . '</li>';
+				$ret .= '<li class="listed_song">' . $filename . '</li>';
 			}
 		}
 		$ret = '<ul id="music_list">' . $ret . '</ul>';

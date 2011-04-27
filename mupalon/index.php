@@ -25,6 +25,7 @@
 			<input type="submit" name="submit" value="Upload">
 		</p>
 	</form>
+	<input type="button" name="shuffle" value="Shuffle" id="shuffle" />
 </div>
 </body>
 </html>

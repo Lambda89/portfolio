@@ -16,6 +16,20 @@ $(document).ready(function(){
 	animateDivs(i, duration);
 	
 	function animateDivs(i, duration) {
+		cnt = $('.card').length;
+		if (i > (cnt-1)) {
+			i = 1;
+			$('.card').animate({'opacity': 1}, duration);
+			setTimeout(function() { animateDivs(i, duration); }, 3000);	
+		} 
+		else {
+			$('#c'+i).animate({'opacity': 0}, duration);
+			i++;
+			setTimeout(function() { animateDivs(i, duration); }, 3000);	
+		}
+	}
+	
+	/* function animateDivs(i, duration) {
 		if (i > 3) { i = 1; } 		
 		$('#c'+i).animate({'left': '-=400px', 'top': '+=80px'}, duration, function(){
 			var z_ind = $('.bottom').css('z-index');
@@ -27,5 +41,5 @@ $(document).ready(function(){
 			i = i + 1;
 			t = setTimeout(function() { animateDivs(i, duration); }, 3000);
 		});
-	}
+	} */
 });
