@@ -12,10 +12,17 @@ $(document).ready(function(){
 	// vars to be used
 	var i = 1;
 	var duration = 1500;
+
+	var type = $('#type').text();
 	
-	animateDivs(i, duration);
+	if (type == "Fade") {
+		fadeDivs(i, duration);
+	}
+	else {
+		slideDivs(i, duration);
+	}
 	
-	function animateDivs(i, duration) {
+	function fadeDivs(i, duration) {
 		cnt = $('.card').length;
 		if (i > (cnt-1)) {
 			i = 1;
@@ -25,11 +32,11 @@ $(document).ready(function(){
 		else {
 			$('#c'+i).animate({'opacity': 0}, duration);
 			i++;
-			setTimeout(function() { animateDivs(i, duration); }, 3000);	
+			setTimeout(function() { fadeDivs(i, duration); }, 3000);	
 		}
 	}
 	
-	/* function animateDivs(i, duration) {
+	function slideDivs(i, duration) {
 		if (i > 3) { i = 1; } 		
 		$('#c'+i).animate({'left': '-=400px', 'top': '+=80px'}, duration, function(){
 			var z_ind = $('.bottom').css('z-index');
@@ -39,7 +46,7 @@ $(document).ready(function(){
 			$('.bottom').removeClass('bottom');
 			$('#c'+i).addClass('bottom');
 			i = i + 1;
-			t = setTimeout(function() { animateDivs(i, duration); }, 3000);
+			t = setTimeout(function() { slideDivs(i, duration); }, 3000);
 		});
-	} */
+	}
 });

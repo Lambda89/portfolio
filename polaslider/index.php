@@ -1,3 +1,11 @@
+<?php
+if ($_GET) {
+	foreach ($_GET as $key => $value) {
+		$get = $key;
+	}
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -15,6 +23,7 @@
 </head>
 
 <body>
+	<span id="type"><?php echo ($get) ? $get : 'Slide'; ?></span>
 	<?php
 		$texts = array(
 			1 => 'Left from my balcony',
