@@ -2,23 +2,27 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: helvetica, tahoma, arial, sans-serif;
+	font-size: 12px;
 }
 
 ul {
 	list-style: none;
 	padding: 0;
-	margin: 0;
+	padding-bottom: 5px;
+	margin-top: -15px;
+	background-color: #111;
+	border-radius: 0px 0px 6px 6px;
 }
 
 li {
 	padding: 5px;
-	background-color: #F44;
-	border: 1px solid black;
-	margin-bottom: 5px;
+	background-color: #111;
+	color: #FFF;
 }
 
-li:hover {
-	color: #000;
+select {
+	margin: 0;
+	padding: 0;
 }
 
 #wrapper {
@@ -35,13 +39,47 @@ li:hover {
 }
 
 .current_div {
-	margin-top: 0;
-	background-color: black;
+	margin-top: -5px;
+	background-color: #111;
 	padding: 5px;
 	padding-bottom: 1px;
 }
 
+.current_div input {
+	margin-left: 10px;
+	border: 1px solid #111;
+	background-color: #333;
+	background-transition: ;
+	color: #FFF;
+	padding: 0px 5px 1px 5px;
+	border-radius: 6px;
+	outline: 0;
+	height: 25px;
+}
+
+.current_div select {
+	margin-left: 10px;
+	border: 1px solid #111;
+	background-color: #222;
+	color: #FFF;
+	padding: 5px;
+	border-radius: 6px;
+	outline: 0;
+	height: 23px;
+}
+
+.current_div select:hover {
+	background-color: #555;
+	color: #9F3;
+}
+
+.current_div input:hover {
+	background-color: #555;
+	color: #9F3;
+}
+
 #current_song {
-	width: 100%;
-	color: #99FF33;
+	width: 70%;
+	color: #9F3;
+	padding-right: 10px;
 }

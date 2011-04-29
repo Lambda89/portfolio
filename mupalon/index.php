@@ -17,15 +17,14 @@
 	<div id="player_area">
 	<?php require('get_songs.php'); ?>
 	</div>
-
 	<form id="mus_sub" action="file_submit.php" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 		<input type="hidden" name="action" value="upload" id="action" />
 		<p>
 			<input type="file" name="song" value="" id="song" />
+			<!-- <label for="artist">Artist (Optional)</label><input type="text" name="artist" value="" id="artist" /> -->
 			<input type="submit" name="submit" value="Upload">
 		</p>
 	</form>
-	<input type="button" name="shuffle" value="Shuffle" id="shuffle" />
 </div>
 </body>
 </html>
