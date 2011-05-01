@@ -8,17 +8,13 @@
 	<script src="jquery-ui.js" type="text/javascript" charset="utf-8"></script>
 	<script src="mupalon.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" href="mupalon.css" type="text/css" media="screen" charset="utf-8" />
-	<title>index</title>
+	<title><?php $_SERVER['SCRIPT_NAME']; ?></title>
 	
 </head>
 
 <body>
 <div id="wrapper">
-	<div id="player_area">
-	<?php require('get_songs.php'); ?>
-	</div>
-	<a href="upload.php">Upload more songs</a>
-	<form action="file_submit.php" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="mus_sub">
+	<form action="file_submit.php" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 		<input type="hidden" name="action" value="upload" id="action" />
 		<p>
 			<input type="file" name="song" value="" id="song" />

@@ -7,6 +7,9 @@ class GetSongs
 {
 	function __construct()
 	{
+		$player = '';
+		$ret = '';
+
 		mysql_connect('localhost', 'root', 'abc123');
 		mysql_select_db('mupalon');
 		$query = "SELECT * FROM `songs` ORDER BY `id` DESC";
@@ -14,8 +17,9 @@ class GetSongs
 		$i = 0;
 		while ($row = mysql_fetch_assoc($result)) {
 			$filename = $row['filename'];
-			$artist = ($row['artist']) ? $row['artist'] : "N/A"; ;
-			$song_name = preg_replace('/\.+([a-zA-Z0-9]{2,4})/', '', $filename);
+			$artist = ($row['artist']) ? $row['artist'] : "N/A";
+			$album = ($row['album']) ? $row['album'] : "Unknown";
+			$song_name = $row['song'];
 			// if ($row['artist']) $song_name .= ' - ' . $row['artist'];
 			if (!$i) {
 				if (stristr($_SERVER['HTTP_USER_AGENT'], 'Firefox') == false) {
@@ -29,7 +33,7 @@ class GetSongs
 				}
 				$player 
 					.= '<div class="current_div"><marquee id="current_song">'
-					. $song_name . '<span class="artist"> - ' . $artist .'</span></marquee>';
+					. $song_name . ' - ' . $artist . '</marquee>';
 				$player 
 					.= '<input type="button" name="shuffle" value="Shuffle" id="shuffle" />'
 					. '<select name="repeat" id="repeat">'
@@ -43,14 +47,13 @@ class GetSongs
 			else {
 				$ret
 					.= '<li class="listed_song" id="' . $filename . '">'
-					. $song_name . '<span class="artist"> - ' . $artist . '</span></li>';
+					. $song_name . ' - ' . $artist . '</li>';
 			}
 		}
 		$ret = '<ul id="music_list">' . $ret . '</ul>';
 		$out = $player . '<br />' . $ret;
 		mysql_close();
 		echo $out;
-		echo $_SERVER['USER_AGENT'];
 	}
 }
 
