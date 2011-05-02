@@ -5,6 +5,19 @@ body {
 	font-size: 12px;
 }
 
+a, a:visited {
+	color: #FFF;
+	background-color: #111;
+	text-decoration: none;
+	padding: 5px;
+	border-radius: 6px;
+}
+
+a:hover, a:active {
+	color: #9F3;
+	background-color: #444;
+}
+
 ul {
 	list-style: none;
 	padding: 0;
