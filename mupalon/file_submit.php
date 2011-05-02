@@ -18,6 +18,7 @@ class FileManager
 
 	private static function upload_file($request) {
 		$cwd = getcwd();
+		if (!file_exists('files/')) mkdir('files', 7770);
 
 		require('getid3/getid3/getid3.php');
 

@@ -12,7 +12,7 @@ class GetSongs
 
 		mysql_connect('localhost', 'root', 'abc123');
 		mysql_select_db('mupalon');
-		$query = "SELECT * FROM `songs` ORDER BY `id` DESC";
+		$query = "SELECT * FROM `songs` ORDER BY `artist` ASC";
 		$result = mysql_query($query);
 		$i = 0;
 		while ($row = mysql_fetch_assoc($result)) {
