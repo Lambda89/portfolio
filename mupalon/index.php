@@ -17,7 +17,6 @@
 	<div id="player_area">
 	<?php require('get_songs.php'); ?>
 	</div>
-	<a href="upload.php">Upload more songs</a>
 	<form action="file_submit.php" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="mus_sub">
 		<input type="hidden" name="action" value="upload" id="action" />
 		<p>

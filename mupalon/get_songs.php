@@ -16,21 +16,19 @@ class GetSongs
 		$result = mysql_query($query);
 		$i = 0;
 		while ($row = mysql_fetch_assoc($result)) {
-			$filename = $row['filename'];
+			if (stristr($_SERVER['HTTP_USER_AGENT'], 'Firefox') == true) {
+				$filename = $row['ogg_name'];
+			}
+			else {
+				$filename = $row['filename'];
+			}
 			$artist = ($row['artist']) ? $row['artist'] : "N/A";
 			$album = ($row['album']) ? $row['album'] : "Unknown";
 			$song_name = $row['song'];
 			// if ($row['artist']) $song_name .= ' - ' . $row['artist'];
 			if (!$i) {
-				if (stristr($_SERVER['HTTP_USER_AGENT'], 'Firefox') == false) {
 				$player 
 					= '<audio id="player" src="files/' . $filename .'" controls="controls" autoplay="autoplay"> </audio>';
-				}
-				else {
-				$player 
-					= '<object data="files/' . $filename . '" type="application/x-mplayer2" width="100%" height="10">'
-					. '<param name="filename" value="music.mp3"></object><embed type="application/x-mplayer2" src="file.mp3">';
-				}
 				$player 
 					.= '<div class="current_div"><marquee id="current_song">'
 					. $song_name . ' - ' . $artist . '</marquee>';
