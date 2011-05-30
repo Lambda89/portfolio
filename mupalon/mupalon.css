@@ -49,6 +49,12 @@ option {
 	padding-top: 50px;
 }
 
+#player_area {
+	padding-top: 5px;
+	background-color: #444;
+	border-radius: 2px 2px;
+}
+
 #player {
 	width: 100%;
 	margin: 0;
@@ -57,33 +63,32 @@ option {
 }
 
 .current_div {
+	height: 35px;
 	margin-top: -5px;
 	background-color: #111;
 	padding: 5px;
 	padding-bottom: 1px;
+	text-align: center;
 }
 
 .current_div input {
-	margin-left: 10px;
 	border: 1px solid #111;
 	background-color: #333;
-	background-transition: ;
 	color: #FFF;
 	padding: 0px 5px 1px 5px;
 	border-radius: 6px;
 	outline: 0;
-	height: 25px;
+	height: 30px;
 }
 
 .current_div select {
-	margin-left: 10px;
 	border: 1px solid #111;
 	background-color: #222;
 	color: #FFF;
 	padding: 5px;
 	border-radius: 6px;
 	outline: 0;
-	height: 23px;
+	height: 27px;
 }
 
 .current_div select:hover {
@@ -97,7 +102,28 @@ option {
 }
 
 #current_song {
-	width: 70%;
+	width: 65%;
 	color: #9F3;
 	padding-right: 10px;
+}
+
+#new_song_form {
+	padding: 5px;
+	background-color: #111;
+	color: #FFF;
+	border-radius: 6px;
+}
+
+#new_song_form input {
+	border: 1px solid #111;
+	background-color: #333;
+	color: #FFF;
+	border-radius: 6px;
+	outline: 0;
+	height: 20px;
+}
+
+#new_song_form input:hover {
+	background-color: #555;
+	color: #9F3;
 }

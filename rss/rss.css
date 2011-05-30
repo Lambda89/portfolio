@@ -1,0 +1,11 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#feed {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}

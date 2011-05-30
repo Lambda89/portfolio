@@ -57,7 +57,7 @@ class FileManager
 			$convert_file_name = self::escape_song_name($filename);
 			$ogg_name = self::escape_song_name($ogg_name);
 
-			shell_exec("/opt/local/var/macports/software/ffmpeg/0.6.2_0/opt/local/bin/ffmpeg -i $cwd/files/$convert_file_name $cwd/files/$ogg_name");
+			//shell_exec("/opt/local/var/macports/software/ffmpeg/0.6.2_0/opt/local/bin/ffmpeg -i $cwd/files/$convert_file_name $cwd/files/$ogg_name");
 
 			mysql_connect('localhost', 'root', 'abc123');
 			mysql_select_db('mupalon');

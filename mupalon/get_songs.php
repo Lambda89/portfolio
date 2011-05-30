@@ -17,10 +17,10 @@ class GetSongs
 		$i = 0;
 		while ($row = mysql_fetch_assoc($result)) {
 			if (stristr($_SERVER['HTTP_USER_AGENT'], 'Firefox') == true) {
-				$filename = $row['ogg_name'];
+				$filename = trim($row['ogg_name']);
 			}
 			else {
-				$filename = $row['filename'];
+				$filename = trim($row['filename']);
 			}
 			$artist = ($row['artist']) ? $row['artist'] : "N/A";
 			$album = ($row['album']) ? $row['album'] : "Unknown";
@@ -33,7 +33,9 @@ class GetSongs
 					.= '<div class="current_div"><marquee id="current_song">'
 					. $song_name . ' - ' . $artist . '</marquee>';
 				$player 
-					.= '<input type="button" name="shuffle" value="Shuffle" id="shuffle" />'
+					.= '<input type="button" name="previous" value="<" id="previous" />'
+					. '<input type="button" name="next" value=">" id="next" />'
+					. '<input type="button" name="shuffle" value="Shuffle" id="shuffle" />'
 					. '<select name="repeat" id="repeat">'
 					//. '<option selected="selected" value="no_repeat">No repeat</option>'
 					. '<option value="repeat_all">Repeat all</option>'

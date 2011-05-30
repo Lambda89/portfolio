@@ -23,6 +23,10 @@ if ($_GET) {
 </head>
 
 <body>
+	<div id="xxx">
+		Hej
+	</div>
+
 	<a href="?Slide"> Slide </a> - <a href="?Fade"> Fade </a>
 	<h2 id="type"><?php echo ($get) ? $get : 'Slide'; ?></h2> <br />
 	<?php

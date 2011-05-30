@@ -8,7 +8,7 @@
 	<script src="jquery-ui.js" type="text/javascript" charset="utf-8"></script>
 	<script src="mupalon.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" href="mupalon.css" type="text/css" media="screen" charset="utf-8" />
-	<title><?php echo ucwords(preg_replace('/(\.php|\/)/', ' | ', $_SERVER['PHP_SELF'])); ?></title>
+	<title><?php echo ucwords(preg_replace('/(\/)/', ' ›› ', $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'])); ?></title>
 	
 </head>
 

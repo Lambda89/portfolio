@@ -7,6 +7,10 @@ $(document).ready(function(){
 	});
 	$('.listed_song:last').addClass('last');
 
+	$.get('http://api.twitter.com/1/statuses/user_timeline.json?screen_name=rickardlund', function(data){
+		console.log(data);
+	});
+
 	$('.listed_song').live('dblclick', function(){
 		var next_song = $(this).attr('id');
 		var next_song_text = $(this).text();
@@ -20,6 +24,42 @@ $(document).ready(function(){
 		$('#current_song').html(next_song_text);
 		$('#music_list').append('<li class="listed_song" id="' + old_song + '">'
 								+ old_song_text + '</li>');	
+	});
+	
+	$('#next').click(function(){
+		// Next song is first in list
+		var next_song = $('#music_list li:first').attr('id');
+		var next_song_text = $('#music_list li:first').text();
+
+		$('#music_list li:first').remove();
+
+		// Old song is to be put last in list, remove folder from filename
+		var old_song = $('#player').attr('src');
+		old_song = old_song.replace('files/', '');
+		var old_song_text = $('#current_song').text();
+
+		$('#player').attr('src', 'files/' + next_song);
+		$('#current_song').html(next_song_text);
+		$('#music_list').append('<li class="listed_song" id="' + old_song + '">'
+								+ old_song_text + '</li>');	
+	});
+
+	$('#previous').click(function(){
+		// Next song is first in list
+		var next_song = $('#music_list li:last').attr('id');
+		var next_song_text = $('#music_list li:last').text();
+
+		$('#music_list li:last').remove();
+
+		// Old song is to be put last in list, remove folder from filename
+		var old_song = $('#player').attr('src');
+		old_song = old_song.replace('files/', '');
+		var old_song_text = $('#current_song').text();
+
+		$('#player').attr('src', 'files/' + next_song);
+		$('#current_song').html(next_song_text);
+		$('#music_list').prepend('<li class="listed_song" id="' + old_song + '">'
+								+ old_song_text + '</li>');
 	});
 
 	$('#player').bind('ended', function(){
