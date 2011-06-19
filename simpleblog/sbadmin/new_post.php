@@ -28,13 +28,12 @@ if (!is_numeric($_SESSION['id']) || $_SESSION['is_admin'] != true) {
 			<h2> Just a very simple admin-view </h2>
 		</div>
 		<div id="content">
-			<?php
-				if (isset($_REQUEST['list'])) {
-					if ($_REQUEST['list'] == "posts") {
-						require(dirname(__FILE__) . '/../routes/posts.route.php');
-					}
-				}
-			?>
+			<form action="../routes/posts.route.php" method="post" accept-charset="utf-8">
+				<p><input type="text" name="topic" value="" id="topic" /></p>
+				<p><textarea name="post" rows="8" cols="40"></textarea></p>
+				<input type="hidden" name="action" value="new" id="action" />
+				<p><input type="submit" value="Submit"></p>
+			</form>
 		</div>
 		<?php include('admin_sidebar.php'); ?>
 		<div id="footer">

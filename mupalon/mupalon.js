@@ -7,10 +7,6 @@ $(document).ready(function(){
 	});
 	$('.listed_song:last').addClass('last');
 
-	$.get('http://api.twitter.com/1/statuses/user_timeline.json?screen_name=rickardlund', function(data){
-		console.log(data);
-	});
-
 	$('.listed_song').live('dblclick', function(){
 		var next_song = $(this).attr('id');
 		var next_song_text = $(this).text();

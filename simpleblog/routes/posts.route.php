@@ -9,6 +9,7 @@ else if (isset($_REQUEST['action'])
 		&& $_REQUEST['action'] == "new"
 		&& $_SESSION['is_admin'] === true) {
 	Post::createNewPost($_REQUEST);
+	header('Location: ../sbadmin/index.php?list=posts');
 }
 else if (isset($_REQUEST['action'])
 		&& isset($_REQUEST['id'])

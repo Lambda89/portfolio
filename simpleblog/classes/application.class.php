@@ -65,6 +65,7 @@ class Application
 	/* SQL-formatting-functions */
 
 	private static function format_lookup($key, $lookup) {
+		unset($lookup['action']);
 		if (is_array($key) && is_array($lookup)) {
 			$i = 0;
 			foreach ($lookup as $value) {
@@ -79,16 +80,18 @@ class Application
 	}
 
 	private static function format_insert(array $columns, array $values) {
+		unset($values['action']);
+		$values['changed'] = date('Y-m-d H:i:s');
 		if (count($columns) == count($values)) {
 			foreach ($columns as $column) {
-				$column = '`' . self::clean($column) . '`';
+				$cols[] = '`' . self::clean($column) . '`';
 			}
-			$columns = implode(',', $columns);
+			$columns = implode(',', $cols);
 			foreach ($values as $value) {
-				$value = "'" . self::clean($value) . "'";
+				$vals[] = "'" . self::clean($value) . "'";
 			}
-			$values = implode(',', $values);
-			return array('columns' => $column, 'values' => $values);	
+			$values = implode(',', $vals);
+			return array('columns' => $columns, 'values' => $values);	
 		}
 		else {
 			return false;
@@ -96,6 +99,7 @@ class Application
 	}
 
 	private static function format_update(array $columns, array $values) {
+		unset($values['action']);
 		if (count($columns) == count($values)) {
 			$i = 0;
 			foreach ($values as $key => $value) {

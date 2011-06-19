@@ -15,14 +15,18 @@ class Post extends Application
 	);
 
 	public static function printAllPosts() {
+		global $mode;
+		
 		$data = Application::index(self::$table);
 		$data = Application::fetch_assoc($data);
+		$link = (isset($_SESSION['is_admin']) && $mode == 'admin') ? 'edit_post.php' : 'show.php';
 		foreach ($data as $key => $post) {
 			echo 
 				'<div class="post_wrapper" id="' . $post['id'] . '">',
-				'<p><a href="show.php?id=' . $post['id'] . '"><strong class="topic">' . $post['topic'] . '</strong></a>',
+				'<p><a href="' . $link . '?id=' . $post['id'] . '"><strong class="topic">' . $post['topic'] . '</strong></a>',
 				'<em class="posted">' . $post['changed'] . '</em></p>',
 				'<p class="post">' . $post['post'] . '</p>',
+				'<hr />',
 				'</div>';
 		}
 	}

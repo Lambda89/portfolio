@@ -15,11 +15,11 @@
 	<div id="login_wrapper">
 		<form action="../routes/user.route.php" method="post" accept-charset="utf-8">
 			<p>
-				<label for="username">Användarnamn</label><br />
+				<label for="username">Username</label><br />
 				<input type="text" name="username" value="" id="username" />
 			</p>
 			<p>
-				<label for="password">Lösenord</label><br />
+				<label for="password">Password</label><br />
 				<input type="password" name="pwd" value="" id="pwd" />
 			</p>
 			<input type="hidden" name="action" value="login" id="action">
