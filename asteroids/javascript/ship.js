@@ -25,11 +25,15 @@ $(document).ready(function(){
 
 	var t;
 
+	// Radian
+
+	var r = 15;
+
 	// Possible directions. Should be some sort of dynamic
 	// algorithm if developed further in the future.
 	// Works perfectly fine ... for now. :)
 
-	var possible_directions = [];
+	/* var possible_directions = [];
 	possible_directions[0] = [-15, 0];
 	possible_directions[15] = [-14.25, 3.25];
 	possible_directions[30] = [-13.5, 7.5];
@@ -53,7 +57,7 @@ $(document).ready(function(){
 	possible_directions[300] = [-7.5, -13.5];
 	possible_directions[315] = [-10.5, -10.5];
 	possible_directions[330] = [-13.5, -7.5];
-	possible_directions[345] = [-14.25, -3.25];
+	possible_directions[345] = [-14.25, -3.25]; */
 
 	// Check for keydown/keyup-events to control ship
 	// jQuery normalizes keypresses (in theory, at least)
@@ -123,20 +127,39 @@ $(document).ready(function(){
 			var deg = $(ship).attr('style');
 		}
 		deg = parseInt(deg.replace(/[\D]{1,200}/, ''));
+
+		var b = Math.cos(deg) + Math.sin(deg);
+
+		top = b * 15;
+		left = b * 15;
+
+		if (top > 0) {
+			tp = '-=';
+		}
+		else {
+			tp = '+=';
+		}
+
+		if (left > 0) {
+			lp = '-=';
+		}
+		else {
+			lp = '+=';
+		}
 		
-		var curr_top = parseInt($('#ship').css('top'));
+		/* var curr_top = parseInt($('#ship').css('top'));
 		var curr_left = parseInt($('#ship').css('left'));
 
 		var new_top = possible_directions[deg][0]*10;
 		var new_left = possible_directions[deg][1]*10;
 
 		var top = curr_top + new_top;
-		var left = curr_left + new_left;
+		var left = curr_left + new_left;*/
 
 		$(ship).css({'border-bottom': '5px solid #ff0'});
-		setTimeout(function() { $(ship).css({'border-bottom': '5px solid #f00'}); }, 200);
-		$(ship).animate({'top': top + 'px', 'left': left + 'px'}, 1000, 'linear', function(){
-			keep_acceleration(ship, deg);
+		setTimeout(function() { $(ship).css({'border-bottom': '5px solid #f00'}); }, 400);
+		$(ship).animate({'top': tp + top + 'px', 'left': lp + left + 'px'}, 1200, 'linear', function(){
+			//keep_acceleration(ship, deg);
 		});
 	}
 
@@ -158,8 +181,8 @@ $(document).ready(function(){
 		var top = curr_top + new_top;
 		var left = curr_left + new_left;
 
-		$(ship).animate({'top': top+'px', 'left': left+'px'}, 1000, 'linear', function(){
-			keep_acceleration(ship, deg);	
+		$(ship).animate({'top': top+'px', 'left': left+'px'}, 1200, 'linear', function(){
+			//keep_acceleration(ship, deg);	
 		});
 	}
 
@@ -171,18 +194,18 @@ $(document).ready(function(){
 		if (agent.webkit) {
 			var deg = $(ship).css(transformation_html);
 			deg = parseInt(deg.replace(/[\D]{1,200}/, ''));
-			deg = deg - 15;
+			deg = deg - 10;
 			if (deg < 0) {
-				deg = 345;
+				deg = 350;
 			}
 			$(ship).css({'webkitTransform': 'rotate('+deg+'deg)'});
 		}
 		if (agent.mozilla) {
 			var deg = $(ship).attr('style');
 			deg = parseInt(deg.replace(/[\D]{1,200}/, ''));
-			deg = deg - 15;
+			deg = deg - 10;
 			if (deg < 0) {
-				deg = 345;
+				deg = 350;
 			}
 			$(ship).css({'-moz-transform': 'rotate('+deg+'deg)'});
 		}
@@ -196,7 +219,7 @@ $(document).ready(function(){
 		if (agent.webkit) {
 			var deg = $(ship).css(transformation_html);
 			deg = parseInt(deg.replace(/[\D]{1,200}/, ''));
-			deg = deg + 15;
+			deg = deg + 10;
 			if (deg > 350) {
 				deg = 0;
 			};
@@ -205,7 +228,7 @@ $(document).ready(function(){
 		if (agent.mozilla) {
 			var deg = $(ship).attr('style');
 			deg = parseInt(deg.replace(/[\D]{1,200}/, ''));
-			deg = deg + 15;
+			deg = deg + 10;
 			if (deg > 350) {
 				deg = 0;
 			}

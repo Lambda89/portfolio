@@ -18,9 +18,9 @@ class FileManager
 
 	private static function upload_file($request) {
 		$cwd = getcwd();
-		if (!file_exists('files/')) mkdir('files', 7770);
+		if (!file_exists('files/')) mkdir('files', 7770);		
 
-		require('getid3/getid3/getid3.php');
+		require('id3/getid3/getid3.php');
 
 		$id3_obj = new getId3;
 		$id3_obj->option_md5_data        = false;
@@ -28,6 +28,7 @@ class FileManager
 		$id3_obj->encoding               = 'UTF-8';
 
 		$result = $id3_obj->analyze($_FILES['song']['tmp_name']);
+
 		if ($result['tags']) {
 			foreach ($result['tags'] as $tags) {
 				if ($tags['title']) {

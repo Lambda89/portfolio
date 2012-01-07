@@ -36,7 +36,7 @@ $(document).ready(function(){
 
 		setTimeout(function() {
 			spawn_asteroid();
-		}, 1700);
+		}, 2500);
 
 		curr_ast = $('#asteroid'+ac);
 		$(curr_ast).animate({'top': xy[2], 'left': xy[3]}, speed, function(){
@@ -52,16 +52,16 @@ $(document).ready(function(){
 		var spawn = spawn_points[spawn_randomizer];
 		
 		if (spawn_randomizer == 0) {
-			var end = spawn_points[3]; 
+			var end = [530, Math.floor(1+(Math.random()*(730-1)))];
 		}
 		if (spawn_randomizer == 1) {
-			var end = spawn_points[2];
+			var end = [-30, Math.floor(1+(Math.random()*(730-1)))]
 		}
 		if (spawn_randomizer == 2) {
-			var end = spawn_points[1];
+			var end = [530, Math.floor(-20+(Math.random()*(-30-20)))];
 		}
 		if (spawn_randomizer == 3) {
-			var end = spawn_points[0];
+			var end = [-30, Math.floor(-20+(Math.random()*(-30-20)))];
 		}
 		return [spawn[0], spawn[1], end[0], end[1]];
 	}
